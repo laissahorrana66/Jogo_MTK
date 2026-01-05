@@ -1,7 +1,3 @@
-import pygame
-import sys
-import time
-
 pygame.init()
 
 WIDTH, HEIGHT = 900, 500
