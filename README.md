@@ -4,7 +4,6 @@ import time
 
 pygame.init()
 
-# ================= CONFIG =================
 WIDTH, HEIGHT = 900, 500
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("ANIME FIGHT - Pixel Kombat")
@@ -12,14 +11,12 @@ pygame.display.set_caption("ANIME FIGHT - Pixel Kombat")
 clock = pygame.time.Clock()
 FONT = pygame.font.SysFont("pixel", 22)
 
-# CORES
 WHITE = (255,255,255)
 RED = (200,0,0)
 GREEN = (0,200,0)
 BLACK = (0,0,0)
 BLUE = (50,50,255)
 
-# ================= PERSONAGEM =================
 class Fighter:
     def __init__(self, name, x, color, power):
         self.name = name
@@ -62,7 +59,6 @@ class Fighter:
         if self.rect.colliderect(enemy.rect):
             enemy.life -= dmg
 
-# ================= TELAS =================
 def show_controls():
     screen.fill(BLACK)
     texts = [
@@ -117,8 +113,6 @@ def choose_character():
                     return Fighter("Naruto", 150, (255,150,0), powers[1])
                 if e.key == pygame.K_3:
                     return Fighter("Sukuna", 150, (150,0,0), powers[2])
-
-# ================= MAIN =================
 show_controls()
 
 player = choose_character()
